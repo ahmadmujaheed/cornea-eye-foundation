@@ -75,7 +75,7 @@ const Home = () => {
           priority
           className="object-cover object-center z-0"
         />
-        <div className="absolute inset-0 bg-gradient-to-l from-black/85 via-black/40 to-transparent z-10" />
+        <div className="absolute inset-0 bg-linear-to-l from-black/85 via-black/40 to-transparent z-10" />
 
         <motion.div
           variants={containerVariants}
@@ -85,7 +85,7 @@ const Home = () => {
         >
           <motion.h1
             variants={itemVariants}
-            className="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight leading-tight"
+            className="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight leading-tight"
           >
             Restoring Sight,
             <br />

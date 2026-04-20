@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { 
@@ -16,7 +16,22 @@ import {
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+
+  // Handle scroll detection
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navLinks = [
     { name: 'Home', href: '/', icon: <Home size={18} /> },
@@ -27,17 +42,31 @@ const Navbar = () => {
     { name: 'Contact', href: '/contact', icon: <Mail size={18} /> },
   ];
 
+  // Logic for Dynamic Classes
+  // On desktop (md:), if not scrolled, stay transparent. Otherwise, white background.
+  const navbarBg = isScrolled 
+    ? "bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm" 
+    : "md:bg-transparent md:border-transparent bg-white"; // Mobile stays white
+
+  const textColor = isScrolled 
+    ? "text-gray-900" 
+    : "md:text-white text-gray-900"; // Mobile stays dark
+
+  const linkColor = isScrolled 
+    ? "text-gray-500 hover:text-gray-900" 
+    : "md:text-gray-200 md:hover:text-white text-gray-500 hover:text-gray-900";
+
   return (
-    <nav className="sticky top-0 z-[100] w-full bg-white/90 backdrop-blur-md border-b border-gray-100">
+    <nav className={`fixed top-0 z-[100] w-full transition-all duration-300 ${navbarBg}`}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-between h-16 items-center">
           
-          <Link href="/" className="text-xl font-bold tracking-tight text-gray-900">
+          <Link href="/" className={`text-xl font-bold tracking-tight transition-colors ${textColor}`}>
             PLATFORM<span className="text-blue-600">.</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-6">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -45,12 +74,12 @@ const Navbar = () => {
                   key={link.name}
                   href={link.href}
                   className={`relative flex items-center gap-2 px-1 py-2 text-sm font-medium transition-colors duration-300 group
-                    ${isActive ? 'text-blue-600' : 'text-gray-500 hover:text-gray-900'}`}
+                    ${isActive ? 'text-blue-600' : linkColor}`}
                 >
                   {link.icon}
                   <span>{link.name}</span>
                   
-                  {/* The Animated Line */}
+                  {/* Animated Line */}
                   <span 
                     className={`absolute bottom-0 left-0 h-[2px] bg-blue-600 transition-all duration-300
                       ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`} 
@@ -72,7 +101,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu (Always White/Solid) */}
       <div 
         className={`md:hidden absolute w-full bg-white border-b transition-all duration-300 ease-in-out
           ${isOpen ? 'translate-y-0 opacity-100 visible' : '-translate-y-2 opacity-0 invisible'}`}

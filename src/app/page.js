@@ -1,15 +1,48 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { Heart, Users, HandCoins, Eye, Activity, Globe } from "lucide-react";
 import { Button } from "antd";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring, useInView } from "framer-motion";
 import Post from "../components/Post";
 import Events from "../components/Events";
 import VolunteerSection from "../components/VolunteerSection";
 
-// Professional Animation Variants
+// --- SUB-COMPONENT: Animated Counter ---
+const ImpactCounter = ({ value }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const motionValue = useMotionValue(0);
+  const springValue = useSpring(motionValue, {
+    damping: 30,
+    stiffness: 100,
+  });
+
+  useEffect(() => {
+    if (isInView) {
+      motionValue.set(value);
+    }
+  }, [isInView, value, motionValue]);
+
+  useEffect(() => {
+    springValue.on("change", (latest) => {
+      if (ref.current) {
+        ref.current.textContent = Intl.NumberFormat("en-US").format(
+          latest.toFixed(0)
+        );
+      }
+    });
+  }, [springValue]);
+
+  return (
+    <h2 ref={ref} className="text-3xl md:text-5xl font-black my-2">
+      0
+    </h2>
+  );
+};
+
+// --- MAIN HOME COMPONENT ---
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -42,8 +75,7 @@ const Home = () => {
           priority
           className="object-cover object-center z-0"
         />
-        {/* Adjusted gradient for right-aligned text readability */}
-        <div className="absolute inset-0 bg-linear-to-l from-black/85 via-black/40 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-l from-black/85 via-black/40 to-transparent z-10" />
 
         <motion.div
           variants={containerVariants}
@@ -53,7 +85,7 @@ const Home = () => {
         >
           <motion.h1
             variants={itemVariants}
-            className="text-4xl md:text-4xl font-extrabold text-white mb-6 tracking-tight leading-tight"
+            className="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight leading-tight"
           >
             Restoring Sight,
             <br />
@@ -84,16 +116,16 @@ const Home = () => {
           variants={containerVariants}
           className="relative md:absolute md:left-0 md:right-0 md:top-0 md:-translate-y-1/2 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 shadow-2xl overflow-hidden md:rounded-none"
         >
-          {/* Box 1: Impact Stats */}
+          {/* Box 1: Impact Stats with COUNTER */}
           <motion.div
             variants={itemVariants}
-            className="bg-orange-600 p-8 md:p-10 text-white"
+            className="bg-orange-600 p-8 md:p-10 text-black"
           >
-            <span className="text-xs font-bold uppercase tracking-widest opacity-80">
+            <span className="font-bold uppercase tracking-widest opacity-80 text-xs">
               Our Impact
             </span>
-            <h2 className="text-3xl md:text-5xl font-black my-2">1,432,805</h2>
-            <p className="opacity-90 font-medium">
+            <ImpactCounter value={1432805} />
+            <p className="opacity-90 font-medium text-sm">
               Successful eye screenings & surgeries performed worldwide.
             </p>
           </motion.div>
@@ -101,7 +133,7 @@ const Home = () => {
           {/* Box 2: Donate */}
           <motion.div
             variants={itemVariants}
-            className="bg-orange-500 p-8 md:p-10 text-white"
+            className="bg-orange-500 p-8 md:p-10 text-black"
           >
             <h3 className="text-xl md:text-2xl font-bold mb-4">
               Fund a Surgery
@@ -111,14 +143,14 @@ const Home = () => {
               independence forever.
             </p>
             <Button className="bg-white text-orange-600 border-none! h-11 px-8 font-bold rounded-none! hover:bg-black! hover:text-white! transition-all cursor-pointer">
-              Donate $25 Now
+              Donate Now
             </Button>
           </motion.div>
 
           {/* Box 3: Volunteer */}
           <motion.div
             variants={itemVariants}
-            className="bg-amber-500 p-8 md:p-10 text-white"
+            className="bg-amber-500 p-8 md:p-10 text-black"
           >
             <h3 className="text-xl md:text-2xl font-bold mb-4">
               Medical Outreach
@@ -181,13 +213,8 @@ const Home = () => {
         </motion.div>
       </section>
 
-      {/* 4. RECENT BLOG SECTION */}
       <Post />
-
-      {/* 5. Recent Events Section */}
       <Events />
-
-      {/* 6. Volunteer Section */}
       <VolunteerSection />
     </main>
   );

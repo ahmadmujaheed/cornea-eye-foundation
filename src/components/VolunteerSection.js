@@ -67,7 +67,7 @@ const VolunteerSection = () => {
           <div className="md:pr-10">
             <motion.span
               variants={itemVariants}
-              className="text-orange-500 font-bold uppercase tracking-[0.2em] text-sm mb-5 block"
+              className="text-[#C99B3B] font-bold uppercase tracking-[0.2em] text-sm mb-5 block"
             >
               Global Outreach Program
             </motion.span>
@@ -94,7 +94,7 @@ const VolunteerSection = () => {
                 variants={itemVariants}
                 className="flex gap-4 items-center"
               >
-                <Target className="text-orange-600 shrink-0" size={20} />
+                <Target className="text-[#C99B3B] shrink-0" size={20} />
                 <span className="text-gray-800 font-semibold text-lg">
                   Focus on preventable cataract care
                 </span>
@@ -103,7 +103,7 @@ const VolunteerSection = () => {
                 variants={itemVariants}
                 className="flex gap-4 items-center"
               >
-                <Target className="text-orange-600 shrink-0" size={20} />
+                <Target className="text-[#C99B3B] shrink-0" size={20} />
                 <span className="text-gray-800 font-semibold text-lg">
                   Building sustainable local clinics
                 </span>
@@ -148,7 +148,7 @@ const VolunteerSection = () => {
               transition={{ delay: 1 }}
               className="absolute -bottom-10 -left-10 bg-white p-6 shadow-xl hidden md:block"
             >
-              <p className="text-orange-600 font-black text-2xl">15+</p>
+              <p className="text-[#C99B3B] font-black text-2xl">15+</p>
               <p className="text-gray-500 text-xs font-bold uppercase tracking-widest leading-tight">
                 Countries <br /> Served
               </p>
@@ -170,7 +170,7 @@ const VolunteerSection = () => {
             {/* Form Left Side: Form Description */}
             <div className="md:col-span-2 space-y-10">
               <div className="flex gap-5 items-start">
-                <div className="p-3 bg-gray-50 border border-gray-100 text-orange-600">
+                <div className="p-3 bg-gray-50 border border-gray-100 text-[#C99B3B]">
                   <Users size={24} />
                 </div>
                 <div>
@@ -184,14 +184,14 @@ const VolunteerSection = () => {
                 </div>
               </div>
               <div className="flex gap-5 items-start">
-                <div className="p-3 bg-gray-50 border border-gray-100 text-orange-600">
+                <div className="p-3 bg-gray-50 border border-gray-100 text-[#C99B3B]">
                   <Mail size={24} />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold mb-1 text-gray-900">
                     Direct Contact
                   </h3>
-                  <p className="text-orange-600 font-semibold text-base tracking-tight hover:underline cursor-pointer">
+                  <p className="text-[#C99B3B] font-semibold text-base tracking-tight hover:underline cursor-pointer">
                     outreach@yourngo.org
                   </p>
                 </div>
@@ -281,33 +281,46 @@ const VolunteerSection = () => {
                     initial="initial"
                     className="relative overflow-hidden inline-block group"
                   >
-                    <Button
-                      type="primary"
-                      htmlType="submit"
+                    {/* 1. The Sliding Background Layer (Black) */}
+                    <motion.div
+                      className="absolute inset-0 bg-[#C99B3B] z-0"
+                      initial={{ x: "-100%" }}
+                      variants={{
+                        hover: { x: 0 },
+                      }}
+                      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                    />
+
+                    <button
+                      type="submit"
                       className="
-                          h-14 px-12 
-                          flex items-center gap-3 
-                          text-xs font-black uppercase tracking-[0.2em] 
-                          border-2 border-orange-600 text-orange-600 bg-transparent
-                          rounded-none hover:border-black! hover:text-white! hover:bg-black! 
-                          transition-all duration-300
-                        "
+      relative h-12 px-12 
+      flex items-center gap-3 
+      text-xs font-black uppercase tracking-[0.2em] 
+      border-2 border-[#C99B3B] text-[#C99B3B] bg-transparent
+      rounded-none 
+      transition-colors duration-300
+      group-hover:text-white group-hover:border-[#C99B3B]
+      z-10 cursor-pointer
+    "
                     >
-                      Submit Application
-                      <motion.div
-                        variants={{
-                          initial: { x: 0 },
-                          hover: { x: 5 },
-                        }}
-                        transition={{
-                          repeat: Infinity,
-                          repeatType: "reverse",
-                          duration: 0.5,
-                        }}
-                      >
-                        <Target size={18} strokeWidth={3} />
-                      </motion.div>
-                    </Button>
+                      <span className="relative z-10 flex items-center gap-3">
+                        Submit Application
+                        <motion.div
+                          variants={{
+                            initial: { x: 0 },
+                            hover: { x: 5 },
+                          }}
+                          transition={{
+                            repeat: Infinity,
+                            repeatType: "reverse",
+                            duration: 0.5,
+                          }}
+                        >
+                          <Target size={18} strokeWidth={3} />
+                        </motion.div>
+                      </span>
+                    </button>
                   </motion.div>
                 </Form.Item>
               </Form>

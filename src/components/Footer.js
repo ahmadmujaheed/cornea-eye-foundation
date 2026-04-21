@@ -16,11 +16,11 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-4 space-y-6">
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-orange-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-black">E</span>
+              <div className="w-10 h-10 bg-[#A67C2E] rounded-full flex items-center justify-center">
+                <span className="text-white font-black">C</span>
               </div>
               <span className="text-2xl font-black tracking-tighter text-white uppercase">
-                Eye<span className="text-orange-600">Care</span> NGO
+                Cornea <span className="text-[#A67C2E]">Eye</span> Foundation
               </span>
             </div>
             <p className="text-sm leading-relaxed max-w-sm">
@@ -30,7 +30,7 @@ const Footer = () => {
             </p>
             <div className="flex gap-4 pt-2">
                {/* Volunteer/Donate Small CTA */}
-               <Link href="/donate" className="text-white text-xs font-bold uppercase tracking-widest flex items-center gap-2 hover:text-orange-500 transition-colors">
+               <Link href="/donate" className="text-white text-xs font-bold uppercase tracking-widest flex items-center gap-2 hover:text-[#A67C2E] transition-colors">
                   Support Our Mission <ArrowRight size={14} />
                </Link>
             </div>
@@ -54,15 +54,15 @@ const Footer = () => {
             <h4 className="text-white font-bold uppercase tracking-widest text-xs">Get In Touch</h4>
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
-                <MapPin size={18} className="text-orange-600 shrink-0" />
+                <MapPin size={18} className="text-[#A67C2E] shrink-0" />
                 <span>123 Vision Way, Medical District,<br />Abuja, Nigeria</span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone size={18} className="text-orange-600 shrink-0" />
+                <Phone size={18} className="text-[#A67C2E] shrink-0" />
                 <span>+234 800 EYE CARE</span>
               </li>
               <li className="flex items-center gap-3">
-                <Mail size={18} className="text-orange-600 shrink-0" />
+                <Mail size={18} className="text-[#A67C2E] shrink-0" />
                 <span className="hover:text-white cursor-pointer transition-colors">outreach@eyecarengo.org</span>
               </li>
             </ul>
@@ -77,14 +77,14 @@ const Footer = () => {
             <div className="flex flex-col gap-2">
               <Input 
                 placeholder="Email Address" 
-                className="bg-transparent border-gray-800 text-white placeholder:text-gray-600 h-11 rounded-none hover:border-orange-600 focus:border-orange-600"
+                className="bg-transparent border-gray-500 text-white placeholder:text-gray-600 h-11 rounded-none! hover:border-[#A67C2E]! focus:border-[#A67C2E]!"
               />
-              <Button 
+              <button 
                 type="primary" 
-                className="h-11 bg-orange-600! border-none rounded-none! font-bold uppercase tracking-widest text-xs hover:bg-white! hover:text-black!"
+                className="h-11 text-white transition-all bg-[#C99B3B] border-none rounded-none! font-bold uppercase tracking-widest text-xs hover:bg-[#A67C2E] cursor-pointer hover:text-black!"
               >
                 Subscribe
-              </Button>
+              </button>
             </div>
           </div>
         </div>
@@ -100,7 +100,7 @@ const Footer = () => {
           <div className="flex items-center text-[11px] uppercase tracking-widest font-bold">
             
             <span className="flex items-center gap-1 text-gray-500">
-              Powered By <span className="text-orange-600 hover:text-white cursor-pointer transition-colors lowercase">www.mahvion.com</span>
+              Powered By <span className="text-[#C99B3B] hover:text-white cursor-pointer transition-colors lowercase">www.mahvion.com</span>
             </span>
           </div>
         </div>

@@ -13,6 +13,7 @@ import {
   Menu, 
   X 
 } from 'lucide-react';
+import { Divide as Hamburger } from 'hamburger-react'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -57,12 +58,12 @@ const Navbar = () => {
     : "md:text-gray-200 md:hover:text-white text-gray-500 hover:text-gray-900";
 
   return (
-    <nav className={`fixed top-0 z-[100] w-full transition-all duration-300 ${navbarBg}`}>
+    <nav className={`fixed top-0 z-100 w-full transition-all duration-300 ${navbarBg}`}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-between h-16 items-center">
           
           <Link href="/" className={`text-xl font-bold tracking-tight transition-colors ${textColor}`}>
-            PLATFORM<span className="text-blue-600">.</span>
+            CORNEA<span className="text-[#C99B3B]">.</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -73,15 +74,15 @@ const Navbar = () => {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`relative flex items-center gap-2 px-1 py-2 text-sm font-medium transition-colors duration-300 group
-                    ${isActive ? 'text-blue-600' : linkColor}`}
+                  className={`relative flex items-center gap-2 px-1 py-1 text-sm font-medium transition-colors duration-300 group
+                    ${isActive ? 'text-[#C99B3B] font-semibold' : linkColor}`}
                 >
-                  {link.icon}
+                  {/* {link.icon} */}
                   <span>{link.name}</span>
                   
                   {/* Animated Line */}
                   <span 
-                    className={`absolute bottom-0 left-0 h-[2px] bg-blue-600 transition-all duration-300
+                    className={`absolute bottom-0 left-0 h-0.5 bg-[#C99B3B] transition-all duration-300
                       ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`} 
                   />
                 </Link>
@@ -91,12 +92,13 @@ const Navbar = () => {
 
           {/* Mobile Button */}
           <div className="md:hidden">
-            <button
+            <Hamburger toggled={isOpen} toggle={setIsOpen} size={22} duration={0.9} color='#000'/>
+            {/* <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 text-gray-600 rounded-lg hover:bg-gray-50"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
@@ -115,9 +117,9 @@ const Navbar = () => {
                 href={link.href}
                 onClick={() => setIsOpen(false)}
                 className={`flex items-center gap-4 py-2 text-base font-medium transition-colors
-                  ${isActive ? 'text-blue-600 border-l-2 border-blue-600 pl-4' : 'text-gray-600 pl-4'}`}
+                  ${isActive ? 'text-[#C99B3B] border-l-2 border-[#C99B3B] pl-4 font-semibold' : 'text-gray-600 pl-4'}`}
               >
-                {link.icon}
+                {/* {link.icon} */}
                 {link.name}
               </Link>
             );

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { MessageSquare, ArrowRight } from "lucide-react";
 import { Button } from "antd";
+import Link from "next/link";
 
 const blogPosts = [
   {
@@ -57,13 +58,13 @@ const BlogSection = () => {
   };
 
   return (
-    <section className="bg-white py-24 px-6">
+    <section className="bg-white pb-24 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
           <h2 className="text-4xl font-light text-gray-800 uppercase tracking-widest mb-6">
             Recent From Blog
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-sm">
+          <p className="text-gray-500 max-w-2xl mx-auto text-sm">
             Behind every surgery is a human story. Explore how your support is
             restoring sight and dignity to families worldwide.
           </p>
@@ -91,16 +92,16 @@ const BlogSection = () => {
 
               {/* 2. Overlapping White Box */}
               <div className="relative z-10 bg-white w-[92%] -mt-12 p-8 shadow-2xl transition-all duration-300">
-                <div className="flex items-center gap-3 text-[12px] text-gray-400 mb-6 font-medium">
-                  <span>{post.date}</span>
+                <div className="flex items-center gap-3 text-[12px] text-gray-500 mb-6 font-medium">
+                  <span className="text-[#C99B3B]">{post.date}</span>
                   <span>{post.author}</span>
                   <span className="flex items-center gap-1.5">
-                    <MessageSquare size={14} className="text-gray-300" />
+                    <MessageSquare size={14} className="text-gray-400" />
                     {post.comments}
                   </span>
                 </div>
 
-                <h3 className="text-xl font-medium text-gray-800 mb-6 leading-relaxed hover:text-orange-500 transition-colors cursor-pointer">
+                <h3 className="text-xl font-medium text-gray-800 mb-6 leading-relaxed hover:text-[#C99B3B] transition-colors cursor-pointer">
                   {post.title}
                 </h3>
 
@@ -114,32 +115,37 @@ const BlogSection = () => {
 
         {/* 3. Animated Ant Design Button */}
         <div className="flex justify-center mt-16">
+          
           <motion.div
             whileHover="hover"
             whileTap={{ scale: 0.96 }} // Subtle "press" effect
             className="relative overflow-hidden group"
           >
             {/* The Button */}
-            <Button
+           <Link href="/blog">
+            <button
               className="
-            h-14 px-12 
+            h-12 px-12 
             flex items-center gap-3 
             text-xs font-black uppercase tracking-[0.2em] 
             border-2 border-gray-900 text-gray-900
             rounded-none bg-transparent
             transition-colors duration-300
-            group-hover:text-white z-10
+            group-hover:text-[#C99B3B] z-10
+            cursor-pointer
           "
             >
               See More Stories
               <motion.span variants={arrowVariants}>
                 <ArrowRight size={18} strokeWidth={3} />
               </motion.span>
-            </Button>
+            </button>
+           </Link>
+            
 
             {/* The Background Slide Effect */}
             <motion.div
-              className="absolute inset-0 bg-gray-900 -z-10"
+              className="absolute inset-0 bg-[#C99B3B] -z-10"
               initial={{ y: "100%" }}
               variants={{
                 hover: { y: 0 },
@@ -147,6 +153,7 @@ const BlogSection = () => {
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             />
           </motion.div>
+          
         </div>
       </div>
     </section>

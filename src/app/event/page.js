@@ -4,9 +4,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import {
-  Calendar, MapPin, Users, Heart, ArrowRight,
-  Play, CheckCircle2, Clock, Globe, MessageSquare,
-  ChevronDown, HelpCircle
+  Calendar, MapPin, Heart, HelpCircle
 } from "lucide-react";
 import {
   Button, Modal, Form, Input, ConfigProvider,
@@ -80,9 +78,9 @@ const EventPage = () => {
           <Image src="/images/blog_large_3.jpg" alt="Abuja Outreach" fill className="object-cover opacity-60 grayscale" />
           <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="max-w-4xl">
-              <span className="inline-block px-4 py-1 bg-orange-600 text-white text-[10px] font-black uppercase tracking-[0.3em] mb-6">NGO Community Event</span>
+              <span className="inline-block px-4 py-1 bg-[#C99B3B] text-white text-[10px]  uppercase tracking-[0.3em] mb-6">CORNEA Community Event</span>
               <h1 className="text-6xl md:text-5xl font-black text-white leading-[0.85] uppercase tracking-tighter mb-8">
-                Restoring <br /> <span className="text-orange-500">Sight</span> Together.
+                Restoring <br /> <span className="text-[#C99B3B]">Sight</span> Together.
               </h1>
               
               {/* Countdown Component */}
@@ -90,24 +88,24 @@ const EventPage = () => {
                 {Object.entries(timeLeft).map(([unit, value]) => (
                   <div key={unit} className="text-center">
                     <p className="text-3xl font-black text-white leading-none">{value}</p>
-                    <p className="text-[10px] text-orange-500 font-black uppercase tracking-widest">{unit}</p>
+                    <p className="text-[10px] text-[#C99B3B] font-black uppercase tracking-widest">{unit}</p>
                   </div>
                 ))}
               </div>
 
               <div className="flex flex-wrap gap-8 text-white/80 uppercase text-[10px] font-black tracking-[0.2em]">
-                <div className="flex items-center gap-2"><Calendar size={14} className="text-orange-500" /> {eventData.date}</div>
-                <div className="flex items-center gap-2"><MapPin size={14} className="text-orange-500" /> {eventData.location}</div>
-                <div className="flex items-center gap-2 text-orange-500"><Heart size={14} /> {eventData.entry}</div>
+                <div className="flex items-center gap-2"><Calendar size={14} className="text-[#C99B3B]" /> {eventData.date}</div>
+                <div className="flex items-center gap-2"><MapPin size={14} className="text-[#C99B3B]" /> {eventData.location}</div>
+                <div className="flex items-center gap-2 text-[#C99B3B]"><Heart size={14} /> {eventData.entry}</div>
               </div>
 
               <div className="mt-12 flex gap-4">
-                <Button onClick={() => setIsModalOpen(true)} className="h-16 px-10 bg-white text-black border-none font-black uppercase text-xs hover:bg-orange-600! hover:text-white!">
+                <button onClick={() => setIsModalOpen(true)} className="h-12 px-10 bg-white text-black border-none font-black uppercase text-xs hover:bg-[#C99B3B]! hover:text-white!">
                   Register to Attend
-                </Button>
-                <Button className="h-16 px-10 bg-transparent text-white border-2 border-white/20 font-black uppercase text-xs">
+                </button>
+                <button className="h-12 px-10 bg-transparent text-white border-2 border-white/20 font-black uppercase text-xs">
                   Volunteer
-                </Button>
+                </button>
               </div>
             </motion.div>
           </div>
@@ -120,7 +118,7 @@ const EventPage = () => {
               {eventData.impact.map((item, i) => (
                 <div key={i} className="space-y-2">
                   <h3 className="text-6xl font-black text-gray-900 tracking-tighter">{item.metric}</h3>
-                  <p className="text-[10px] font-black uppercase tracking-widest text-orange-600">{item.label}</p>
+                  <p className="text-[10px] font-black uppercase tracking-widest text-[#C99B3B]">{item.label}</p>
                 </div>
               ))}
             </div>
@@ -141,7 +139,7 @@ const EventPage = () => {
               {/* FAQ Section */}
               <div>
                 <h3 className="text-2xl font-black uppercase tracking-tighter mb-8 flex items-center gap-3">
-                   <HelpCircle className="text-orange-600" /> Common Questions
+                   <HelpCircle className="text-[#C99B3B]" /> Common Questions
                 </h3>
                 <Collapse ghost expandIconPosition="end" className="faq-collapse">
                   {faqs.map((faq, i) => (
@@ -154,12 +152,12 @@ const EventPage = () => {
             </div>
 
             <div className="lg:col-span-4">
-              <div className="sticky top-10 border-l-4 border-orange-600 pl-8 py-4 bg-white shadow-xl shadow-gray-100">
+              <div className="sticky top-10 border-l-4 border-[#C99B3B] pl-8 py-4 bg-white shadow-xl shadow-gray-100">
                 <h3 className="text-sm font-black uppercase tracking-widest mb-8 text-gray-400">Clinic Schedule</h3>
                 <div className="space-y-10">
                   {eventData.schedule.map((item, i) => (
                     <div key={i} className="relative">
-                      <span className="text-[10px] font-black text-orange-600 block mb-1">{item.time}</span>
+                      <span className="text-[10px] font-black text-[#C99B3B] block mb-1">{item.time}</span>
                       <h4 className="text-lg font-bold uppercase tracking-tight">{item.task}</h4>
                       <p className="text-xs text-gray-400 font-medium">{item.lead}</p>
                     </div>
@@ -173,7 +171,7 @@ const EventPage = () => {
         {/* 4. THE TEAM */}
         <section className="bg-gray-50 py-32 px-6">
           <div className="max-w-7xl mx-auto text-center mb-20">
-            <span className="text-orange-600 font-black uppercase tracking-widest text-[10px]">Clinical Team</span>
+            <span className="text-[#C99B3B] font-black uppercase tracking-widest text-[10px]">Clinical Team</span>
             <h2 className="text-5xl font-black uppercase tracking-tighter mt-2">The Medical Experts</h2>
           </div>
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
@@ -183,7 +181,7 @@ const EventPage = () => {
                   <Image src={member.image} alt={member.name} fill className="object-cover" />
                 </div>
                 <h4 className="text-xl font-bold uppercase tracking-tighter mb-1">{member.name}</h4>
-                <p className="text-[10px] font-black text-orange-600 uppercase mb-3">{member.role}</p>
+                <p className="text-[10px] font-black text-[#C99B3B] uppercase mb-3">{member.role}</p>
                 <p className="text-sm text-gray-500 font-serif italic">{member.bio}</p>
               </motion.div>
             ))}

@@ -42,13 +42,11 @@ const ContactPage = () => {
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-5xl md:text-4xl font-black text-white uppercase tracking-tighter"
+              className="text-5xl md:text-5xl font-black text-white uppercase tracking-tighter"
             >
               Contact Us
             </motion.h1>
-            <p className="text-orange-400 font-bold uppercase tracking-widest mt-2 text-xs">
-              Abuja • Nigeria
-            </p>
+            
           </div>
         </section>
 
@@ -73,11 +71,11 @@ const ContactPage = () => {
             </div>
             <div>
               <p className="text-[11px] font-black uppercase tracking-widest text-gray-900 mb-2">Email:</p>
-              <p className="text-[#c99b3b] font-medium text-sm">info@yoursite.com</p>
+              <p className="text-[#C99B3B] font-medium text-sm">info@yoursite.com</p>
             </div>
             <div>
               <p className="text-[11px] font-black uppercase tracking-widest text-gray-900 mb-2">Phone:</p>
-              <p className="text-[#c99b3b] font-medium text-sm">+ 1235 2355 98</p>
+              <p className="text-[#C99B3B] font-medium text-sm">+ 1235 2355 98</p>
             </div>
           </div>
 
@@ -86,23 +84,23 @@ const ContactPage = () => {
             <Form form={form} layout="vertical">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                 <Form.Item name="name">
-                  <Input placeholder="Name" className="h-14 border-gray-200 border-x-0 border-t-0 border-b hover:border-[#c99b3b] focus:border-[#c99b3b] shadow-none rounded-none bg-transparent" />
+                  <Input placeholder="Name" className="h-14 border-gray-200 border-x-0 border-t-0 border-b hover:border-[#C99B3B] focus:border-[#C99B3B] shadow-none rounded-none bg-transparent" />
                 </Form.Item>
                 <Form.Item name="email">
-                  <Input placeholder="Email" className="h-14 border-gray-200 border-x-0 border-t-0 border-b hover:border-[#c99b3b] focus:border-[#c99b3b] shadow-none rounded-none bg-transparent" />
+                  <Input placeholder="Email" className="h-14 border-gray-200 border-x-0 border-t-0 border-b hover:border-[#C99B3B] focus:border-[#C99B3B] shadow-none rounded-none bg-transparent" />
                 </Form.Item>
                 <Form.Item name="subject">
-                  <Input placeholder="Subject" className="h-14 border-gray-200 border-x-0 border-t-0 border-b hover:border-[#c99b3b] focus:border-[#c99b3b] shadow-none rounded-none bg-transparent" />
+                  <Input placeholder="Subject" className="h-14 border-gray-200 border-x-0 border-t-0 border-b hover:border-[#C99B3B] focus:border-[#C99B3B] shadow-none rounded-none bg-transparent" />
                 </Form.Item>
               </div>
 
               <Form.Item name="message" className="mb-10">
-                <Input.TextArea rows={4} placeholder="Create a message here" className="border-gray-200 border-x-0 border-t-0 border-b hover:border-[#c99b3b] focus:border-[#c99b3b] shadow-none rounded-none resize-none p-0 pt-4 bg-transparent" />
+                <Input.TextArea rows={6} placeholder="Create a message here" className="border-gray-200 border-x-0 border-t-0 border-b hover:border-[#c99b3b] focus:border-[#c99b3b] shadow-none rounded-none resize-none! p-0 pt-4 bg-transparent" />
               </Form.Item>
 
-              <Button type="primary" htmlType="submit" className="bg-[#c99b3b] border-none h-14 px-10 rounded-full font-bold text-white transition-all hover:opacity-90">
+              <button type="primary" htmlType="submit" className="bg-[#C99B3B] cursor-pointer border-none h-12 px-10  font-bold text-white transition-all hover:opacity-90">
                 Send Message
-              </Button>
+              </button>
             </Form>
           </div>
 
@@ -111,7 +109,7 @@ const ContactPage = () => {
             <h3 className="text-xl font-bold text-gray-900 mb-6">Follow us here</h3>
             <div className="flex flex-wrap gap-8">
               {["FACEBOOK", "TWITTER", "INSTAGRAM", "DRIBBBLE"].map((social) => (
-                <button key={social} className="text-[11px] font-black uppercase tracking-widest text-[#c99b3b] hover:text-black transition-colors">
+                <button key={social} className="text-[11px] font-black uppercase tracking-widest text-[#C99B3B] hover:text-black transition-colors">
                   {social}
                 </button>
               ))}

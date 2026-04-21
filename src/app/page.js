@@ -29,7 +29,7 @@ const ImpactCounter = ({ value }) => {
     springValue.on("change", (latest) => {
       if (ref.current) {
         ref.current.textContent = Intl.NumberFormat("en-US").format(
-          latest.toFixed(0)
+          latest.toFixed(0),
         );
       }
     });
@@ -89,7 +89,7 @@ const Home = () => {
           >
             Restoring Sight,
             <br />
-            <span className="text-blue-500">Transforming Lives</span>
+            <span className="text-[#C99B3B]">Transforming Lives</span>
           </motion.h1>
           <motion.p
             variants={itemVariants}
@@ -100,8 +100,27 @@ const Home = () => {
             world's most remote regions.
           </motion.p>
           <motion.div variants={itemVariants}>
-            <button className="px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full transition-all shadow-xl hover:scale-105">
-              Give the Gift of Sight
+            <button
+              className="
+    relative group overflow-hidden
+    border border-white/20 text-white 
+    px-10 py-5 font-semibold uppercase tracking-[0.2em] text-[10px] 
+    cursor-pointer transition-colors duration-300
+  "
+            >
+              {/* 1. The Sliding Background Layer */}
+              <span
+                className="
+      absolute inset-0 w-0 bg-[#C99B3B] 
+      transition-all duration-500 ease-out 
+      group-hover:w-full -z-10
+    "
+              />
+
+              {/* 2. The Text (Needs to stay above the sliding layer) */}
+              <span className="relative z-10 group-hover:text-black transition-colors duration-300">
+                Give the Gift of Sight
+              </span>
             </button>
           </motion.div>
         </motion.div>
@@ -114,12 +133,12 @@ const Home = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={containerVariants}
-          className="relative md:absolute md:left-0 md:right-0 md:top-0 md:-translate-y-1/2 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 shadow-2xl overflow-hidden md:rounded-none"
+          className="mt-10 relative md:absolute md:left-0 md:right-0 md:top-0 md:-translate-y-1/2 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 shadow-2xl overflow-hidden md:rounded-none"
         >
           {/* Box 1: Impact Stats with COUNTER */}
           <motion.div
             variants={itemVariants}
-            className="bg-orange-600 p-8 md:p-10 text-black"
+            className="bg-[#7A5B22] p-8 md:p-10 text-black"
           >
             <span className="font-bold uppercase tracking-widest opacity-80 text-xs">
               Our Impact
@@ -133,7 +152,7 @@ const Home = () => {
           {/* Box 2: Donate */}
           <motion.div
             variants={itemVariants}
-            className="bg-orange-500 p-8 md:p-10 text-black"
+            className="bg-[#A67C2E] p-8 md:p-10 text-black"
           >
             <h3 className="text-xl md:text-2xl font-bold mb-4">
               Fund a Surgery
@@ -150,7 +169,7 @@ const Home = () => {
           {/* Box 3: Volunteer */}
           <motion.div
             variants={itemVariants}
-            className="bg-amber-500 p-8 md:p-10 text-black"
+            className="bg-[#C99B3B] p-8 md:p-10 text-black"
           >
             <h3 className="text-xl md:text-2xl font-bold mb-4">
               Medical Outreach
@@ -167,7 +186,7 @@ const Home = () => {
       </section>
 
       {/* 3. FEATURES / SERVICES SECTION */}
-      <section className="bg-white pt-24 md:pt-72 pb-48 md:pb-64 px-6">
+      <section className="bg-white pt-24 md:pt-72 pb-48 px-6">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -197,7 +216,7 @@ const Home = () => {
               variants={itemVariants}
               className="flex gap-4 items-start group"
             >
-              <div className="text-orange-600 p-4 bg-orange-50 rounded-2xl group-hover:bg-orange-600 group-hover:text-white transition-all duration-500 shadow-sm">
+              <div className="text-orange-600 p-4 bg-orange-50 rounded-2xl group-hover:bg-[#C99B3B] group-hover:text-white transition-all duration-500 shadow-sm">
                 {item.icon}
               </div>
               <div>

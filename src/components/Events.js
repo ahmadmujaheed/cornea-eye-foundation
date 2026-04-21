@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { MessageSquare, ArrowRight, Calendar } from "lucide-react";
-import { Button } from "antd";
+import Link from "next/link";
 
 const recentEvents = [
   {
@@ -61,7 +61,7 @@ const EventSection = () => {
           <h2 className="text-4xl font-light text-gray-800 uppercase tracking-widest mb-6">
             Recent & Upcoming Events
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-sm leading-loose">
+          <p className="text-gray-500 max-w-2xl mx-auto text-sm leading-loose">
             From fundraising galas to grassroots medical missions, find out
             where we’ve been and how you can join our upcoming efforts to
             restore sight.
@@ -91,7 +91,7 @@ const EventSection = () => {
               {/* 2. Overlapping White Box */}
               <div className="relative z-10 bg-white w-[92%] -mt-12 p-8 shadow-2xl transition-all duration-300">
                 {/* Event Meta Data */}
-                <div className="flex items-center gap-3 text-[11px] text-blue-600 mb-6 font-bold uppercase tracking-wider">
+                <div className="flex items-center gap-3 text-[11px] text-[#C99B3B] mb-6 font-bold uppercase tracking-wider">
                   <span className="flex items-center gap-1.5">
                     <Calendar size={13} strokeWidth={2.5} /> {event.date}
                   </span>
@@ -102,7 +102,7 @@ const EventSection = () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-semibold text-gray-800 mb-6 leading-relaxed hover:text-orange-500 transition-colors cursor-pointer">
+                <h3 className="text-xl font-semibold text-gray-800 mb-6 leading-relaxed hover:text-[#C99B3B] transition-colors cursor-pointer">
                   {event.title}
                 </h3>
 
@@ -117,32 +117,36 @@ const EventSection = () => {
 
         {/* 3. Premium Animated Ant Design Button */}
         <div className="flex justify-center mt-16">
-          <motion.div
+         <motion.div
             whileHover="hover"
             whileTap={{ scale: 0.96 }} // Subtle "press" effect
             className="relative overflow-hidden group"
           >
             {/* The Button */}
-            <Button
+           <Link href="/event">
+            <button
               className="
-                    h-14 px-12 
-                    flex items-center gap-3 
-                    text-xs font-black uppercase tracking-[0.2em] 
-                    border-2 border-gray-900 text-gray-900
-                    rounded-none bg-transparent
-                    transition-colors duration-300
-                    group-hover:text-white z-10
-                  "
+            h-12 px-12 
+            flex items-center gap-3 
+            text-xs font-black uppercase tracking-[0.2em] 
+            border border-gray-900 text-gray-900
+            rounded-none bg-transparent
+            transition-colors duration-300
+            group-hover:text-[#C99B3B] z-10
+            cursor-pointer
+          "
             >
-              See all events
+              See All Events
               <motion.span variants={arrowVariants}>
                 <ArrowRight size={18} strokeWidth={3} />
               </motion.span>
-            </Button>
+            </button>
+           </Link>
+            
 
             {/* The Background Slide Effect */}
             <motion.div
-              className="absolute inset-0 bg-gray-900 -z-10"
+              className="absolute inset-0 bg-[#C99B3B] -z-10"
               initial={{ y: "100%" }}
               variants={{
                 hover: { y: 0 },

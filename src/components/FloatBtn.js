@@ -89,8 +89,8 @@ const FloatBtn = () => {
         .ant-float-btn, 
         .ant-float-btn-body, 
         .ant-float-btn-content {
-          width: 56px !important;  /* Standard premium size */
-          height: 56px !important;
+          width: 40px !important;  /* Standard premium size */
+          height: 40px !important;
         }
 
         /* 2. FIX IMAGE ALIGNMENT & CENTERING */
@@ -108,9 +108,9 @@ const FloatBtn = () => {
           transition: all 0.3s ease;
         }
 
-        .ant-float-btn-primary .ant-float-btn-body:hover {
-          background-color: #f97316 !important; /* Premium Orange */
-        }
+        // .ant-float-btn-primary .ant-float-btn-body:hover {
+        //   background-color: #f97316 !important; /* Premium Orange */
+        // }
 
         /* 4. SMOOTH HOVER LIFT */
         .ant-float-btn {

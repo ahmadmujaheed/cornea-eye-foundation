@@ -91,7 +91,7 @@ const BlogPage = () => {
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-orange-500 font-bold uppercase tracking-[0.3em] text-xs mb-4 block"
+            className="text-[#C99B3B] font-bold uppercase tracking-[0.3em] text-xs mb-4 block"
           >
             Insights & Impact
           </motion.span>
@@ -99,7 +99,7 @@ const BlogPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-4xl md:text-4xl font-black text-white mb-8 leading-tight uppercase tracking-tighter"
+            className="text-4xl md:text-5xl font-black text-white mb-8 leading-tight uppercase tracking-tighter"
           >
             The Vision <br /> Journal
           </motion.h1>
@@ -128,9 +128,9 @@ const BlogPage = () => {
               <Option value="stories">Patient Stories</Option>
               <Option value="outreach">Field Reports</Option>
             </Select>
-            <Button className="bg-black text-white h-12 px-8 font-bold uppercase text-xs rounded-none! border-none hover:bg-orange-600! transition-colors">
+            <button className="bg-black text-white h-10 px-8 font-bold uppercase text-xs rounded-none! border-none hover:bg-[#C99B3B] cursor-pointer transition-colors">
               Find
-            </Button>
+            </button>
           </motion.div>
         </div>
       </section>
@@ -158,7 +158,7 @@ const BlogPage = () => {
                   fill
                   className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                 />
-                <div className="absolute top-4 left-4 bg-orange-600 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1">
+                <div className="absolute top-4 left-4 bg-[#C99B3B] text-white text-[10px] font-black uppercase tracking-widest px-3 py-1">
                   {post.category}
                 </div>
               </div>
@@ -166,7 +166,7 @@ const BlogPage = () => {
               {/* Content */}
               <div className="space-y-4">
                 <div className="flex items-center gap-4 text-[11px] font-bold text-gray-400 uppercase tracking-wider">
-                  <span className="flex items-center gap-1.5">
+                  <span className="flex items-center gap-1.5 text-[#C99B3B]">
                     <Calendar size={14} /> {post.date}
                   </span>
                   <span className="text-gray-200">|</span>
@@ -175,7 +175,7 @@ const BlogPage = () => {
                   </span>
                 </div>
 
-                <h3 className="text-2xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors leading-snug">
+                <h3 className="text-2xl font-bold text-gray-900 group-hover:text-[#C99B3B] transition-colors leading-snug">
                   {post.title}
                 </h3>
 
@@ -223,22 +223,22 @@ const BlogPage = () => {
           We are always looking for volunteer writers and patients who want to
           share their journey with the world.
         </p>
-        <Button className="h-14 px-12 border-2 border-black rounded-none! font-black uppercase tracking-widest text-xs hover:bg-black! hover:text-white! transition-all">
+        <button className="h-12 px-12 cursor-pointer border text-[#C99B3B] border-[#C99B3B] rounded-none! font-black uppercase tracking-widest text-xs hover:bg-[#C99B3B] hover:text-white! transition-all">
           Contact Editorial Team
-        </Button>
+        </button>
       </section>
 
       <style jsx global>{`
         .premium-pagination .ant-pagination-item-active {
-          border-color: #f97316 !important;
-          background-color: #f97316 !important;
+          border-color: transparent!important;
+          background-color: #C99B3B !important;
           border-radius: 50% !important;
         }
         .premium-pagination .ant-pagination-item-active a {
           color: white !important;
         }
         .premium-pagination .ant-pagination-item:hover {
-          background-color: #f97316 !important;
+          background-color: #C99B3B !important;
           border-radius: 50% !important;
         }
         .ant-input:focus,

@@ -128,7 +128,7 @@ const BlogSection = () => {
             h-12 px-12 
             flex items-center gap-3 
             text-xs font-black uppercase tracking-[0.2em] 
-            border-2 border-gray-900 text-gray-900
+            border border-gray-900 text-gray-900
             rounded-none bg-transparent
             transition-colors duration-300
             group-hover:text-[#C99B3B] z-10

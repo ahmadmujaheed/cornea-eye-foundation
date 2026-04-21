@@ -44,6 +44,8 @@ const Footer = () => {
               <li><Link href="/events" className="hover:text-white transition-colors">Recent Events</Link></li>
               <li><Link href="/volunteer" className="hover:text-white transition-colors">Become a Volunteer</Link></li>
               <li><Link href="/stories" className="hover:text-white transition-colors">Impact Stories</Link></li>
+              <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+              <li><Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link></li>
             </ul>
           </div>
 
@@ -90,14 +92,13 @@ const Footer = () => {
         <Divider className="border-gray-900 my-0" />
 
         {/* Bottom Section: Copyright & Legal */}
-        <div className="py-8 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="py-8 flex flex-col justify-between items-center gap-1">
           <div className="text-[11px] uppercase tracking-widest font-medium">
             © {currentYear} EyeCare NGO. All Rights Reserved.
           </div>
           
-          <div className="flex items-center gap-6 text-[11px] uppercase tracking-widest font-bold">
-            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+          <div className="flex items-center text-[11px] uppercase tracking-widest font-bold">
+            
             <span className="flex items-center gap-1 text-gray-500">
               Powered By <span className="text-orange-600 hover:text-white cursor-pointer transition-colors lowercase">www.mahvion.com</span>
             </span>

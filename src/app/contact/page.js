@@ -97,7 +97,7 @@ const ContactPage = () => {
               </div>
 
               <Form.Item name="message" className="mb-10">
-                <Input.TextArea rows={4} placeholder="Create a message here" className="border-gray-200 border-x-0 border-t-0 border-b hover:border-[#c99b3b] focus:border-[#c99b3b] shadow-none rounded-none resize-none p-0 pt-4 bg-transparent" />
+                <Input.TextArea rows={6} placeholder="Create a message here" className="border-gray-200 border-x-0 border-t-0 border-b hover:border-[#c99b3b] focus:border-[#c99b3b] shadow-none rounded-none resize-none! p-0 pt-4 bg-transparent" />
               </Form.Item>
 
               <Button type="primary" htmlType="submit" className="bg-[#c99b3b] border-none h-14 px-10 rounded-full font-bold text-white transition-all hover:opacity-90">

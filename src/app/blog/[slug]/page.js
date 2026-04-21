@@ -80,7 +80,7 @@ const BlogPostPage = ({ params }) => {
     <main key={slug} className="bg-white min-h-screen pb-20">
       {/* 1. TOP READING PROGRESS BAR */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1.5 bg-orange-600 z-50 origin-left"
+        className="fixed top-0 left-0 right-0 h-1.5 bg-[#C99B3B] z-50 origin-left"
         style={{ scaleX: scrollYProgress }}
       />
 
@@ -94,7 +94,7 @@ const BlogPostPage = ({ params }) => {
             priority
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/95 via-black/30 to-transparent" />
         </motion.div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 pb-20 w-full text-white">
@@ -108,7 +108,7 @@ const BlogPostPage = ({ params }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="bg-orange-600 text-white text-[10px] font-black uppercase tracking-[0.2em] px-4 py-2 mb-6 inline-block">
+            <span className="bg-[#C99B3B] text-white text-[10px] uppercase tracking-[0.2em] px-4 py-2 mb-6 inline-block">
               {post.category} | Article ID: {slug}
             </span>
             
@@ -116,9 +116,9 @@ const BlogPostPage = ({ params }) => {
               {post.title}
             </h1>
 
-            <div className="flex flex-wrap items-center gap-8 text-sm font-medium opacity-80">
+            <div className="flex flex-wrap text-[#C99B3B] items-center gap-8 text-sm font-medium opacity-80">
               <div className="flex items-center gap-3">
-                <Avatar size="small" className="bg-orange-500">{post.author[0]}</Avatar>
+                <Avatar size="small" className="bg-[#C99B3B]!">{post.author[0]}</Avatar>
                 <span>{post.author}</span>
               </div>
               <div className="flex items-center gap-2"><FaRegCalendarAlt size={14} /> {post.date}</div>
@@ -136,7 +136,7 @@ const BlogPostPage = ({ params }) => {
             {[FaFacebookF, FaTwitter, FaLinkedinIn, FaShareAlt].map((Icon, i) => (
               <button 
                 key={i} 
-                className="p-3 bg-gray-100 text-gray-500 opacity-70 hover:opacity-100 hover:bg-orange-600 hover:text-white rounded-full transition-all flex items-center justify-center border border-gray-200 shadow-sm"
+                className="p-3 bg-gray-100 text-gray-500 opacity-70 hover:opacity-100 hover:bg-[#C99B3B] hover:text-white rounded-full transition-all flex items-center justify-center border border-gray-200 shadow-sm"
               >
                 <Icon size={18} />
               </button>
@@ -157,12 +157,12 @@ const BlogPostPage = ({ params }) => {
             </p>
 
             {/* DYNAMIC QUOTE */}
-            <blockquote className="my-16 border-l-4 border-orange-600 pl-8 py-2 italic relative">
-               <FaQuoteLeft className="absolute -top-10 -left-4 text-orange-100/50" size={80} />
+            <blockquote className="my-16 border-l-4 border-[#C99B3B] pl-8 py-2 italic relative">
+               <FaQuoteLeft className="absolute -top-10 -left-4 text-[#C99B3B]/50" size={80} />
                <p className="text-3xl font-black text-gray-900 leading-tight relative z-10">
                  "{post.quote}"
                </p>
-               <footer className="mt-4 text-sm font-bold uppercase tracking-widest text-orange-600">— {post.author}</footer>
+               <footer className="mt-4 text-sm font-bold uppercase tracking-widest text-[#C99B3B]">— {post.author}</footer>
             </blockquote>
 
             <h3 className="text-3xl font-black text-gray-900 mt-16 mb-6 uppercase tracking-tighter">Impact Statistics</h3>
@@ -195,13 +195,13 @@ const BlogPostPage = ({ params }) => {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
             <div>
-              <span className="text-orange-600 font-bold uppercase tracking-widest text-xs">Keep Reading</span>
+              <span className="text-[#C99B3B] font-bold uppercase tracking-widest text-xs">Keep Reading</span>
               <h2 className="text-4xl font-black text-gray-900 uppercase tracking-tighter mt-2">Related Stories</h2>
             </div>
             <Link href="/blog">
-              <Button className="rounded-none! font-black uppercase tracking-widest text-xs h-14 px-10 border-2 border-black hover:bg-black! hover:text-white! transition-all">
+              <button className="rounded-none! text-black uppercase tracking-widest text-xs h-10 px-10 border border-[#C99B3B] hover:bg-[#C99B3B]! hover:text-white! transition-all">
                 View Journal
-              </Button>
+              </button>
             </Link>
           </div>
 
@@ -224,13 +224,13 @@ const BlogPostPage = ({ params }) => {
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
                 </div>
                 <div className="md:col-span-3 space-y-3">
-                  <span className="text-[10px] font-black text-orange-600 uppercase tracking-widest">
+                  <span className="text-[10px] font-black text-[#C99B3B] uppercase tracking-widest">
                     {blogPosts[id].category}
                   </span>
-                  <h4 className="text-2xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors leading-tight">
+                  <h4 className="text-2xl font-bold text-gray-900 group-hover:text-[#C99B3B] transition-colors leading-tight">
                     {blogPosts[id].title}
                   </h4>
-                  <div className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest pt-2 group-hover:gap-4 transition-all">
+                  <div className="inline-flex text-gray-500 items-center gap-2 text-xs font-black uppercase tracking-widest pt-2 group-hover:gap-4 transition-all">
                     Read Story <HiOutlineArrowNarrowRight size={18} />
                   </div>
                 </div>

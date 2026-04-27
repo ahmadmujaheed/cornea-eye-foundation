@@ -52,7 +52,7 @@ const EventPage = () => {
   };
 
   const teamMembers = [
-    { id: 1, name: "Dr. Amara Okezie", role: "Lead Surgeon", image: "/images/doctor_1.jpg", bio: "15+ years experience in high-volume cataract surgery." },
+    { id: 1, name: "Dr. Ahmed Saidu ", role: "Lead Surgeon", image: "/images/person1.jpg", bio: "15+ years experience in high-volume cataract surgery." },
     { id: 2, name: "Marcus Thorne", role: "Tech Director", image: "/images/doctor_2.jpg", bio: "Oversees V-Series laser deployment and precision." },
     { id: 3, name: "Sarah Bello", role: "Community Lead", image: "/images/doctor_3.jpg", bio: "Managing local trust and Abuja district partnerships." },
     { id: 4, name: "Dr. Julian Voss", role: "Optometrist", image: "/images/doctor_4.jpg", bio: "Specialist in pediatric vision and early intervention." },

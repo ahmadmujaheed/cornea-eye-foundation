@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -38,7 +38,8 @@ const Navbar = () => {
     { name: 'Home', href: '/', icon: <Home size={18} /> },
     { name: 'About', href: '/about', icon: <User size={18} /> },
     { name: 'Services', href: '/services', icon: <Settings size={18} /> },
-    { name: 'Event', href: '/event', icon: <Calendar size={18} /> },
+    { name: 'Programs', href: '/programs', icon: <Settings size={18} /> },
+    { name: 'Events', href: '/event', icon: <Calendar size={18} /> },
     { name: 'Blog', href: '/blog', icon: <FileText size={18} /> },
     { name: 'Contact', href: '/contact', icon: <Mail size={18} /> },
   ];
@@ -62,8 +63,9 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-between h-16 items-center">
           
-          <Link href="/" className={`text-xl font-bold tracking-tight transition-colors ${textColor}`}>
-            CORNEA<span className="text-[#C99B3B]">.</span>
+          <Link href="/" className={`flex items-center gap-2 text-xl font-bold tracking-tight transition-colors ${textColor}`}>
+          <Image src="/images/logo4.jpg" alt="Logo" width={70} height={70}  className="object-contain" />
+            THE CORNEA AND EYE FOUNDATION<span className="text-[#C99B3B]">.</span>
           </Link>
 
           {/* Desktop Navigation */}

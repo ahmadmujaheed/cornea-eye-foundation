@@ -55,15 +55,15 @@ const Footer = () => {
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-[#A67C2E] shrink-0" />
-                <span>123 Vision Way, Medical District,<br />Abuja, Nigeria</span>
+                <span>MOQ 1/15, NAF BASE, Kaduna,<br />800001, Nigeria</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-[#A67C2E] shrink-0" />
-                <span>+234 800 EYE CARE</span>
+                <span>+ 234 812 953 1011</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={18} className="text-[#A67C2E] shrink-0" />
-                <span className="hover:text-white cursor-pointer transition-colors">outreach@eyecarengo.org</span>
+                <span className="hover:text-white cursor-pointer transition-colors">nigeriacorneafoundation@gmail.com</span>
               </li>
             </ul>
           </div>

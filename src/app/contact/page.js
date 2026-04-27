@@ -64,18 +64,18 @@ const ContactPage = () => {
             <div>
               <p className="text-[11px] font-black uppercase tracking-widest text-gray-900 mb-2">Address:</p>
               <p className="text-gray-600 text-sm leading-relaxed">
-                198 Wuse Market Road, <br />
-                Zone 5, Abuja, <br />
-                FCT 900285, Nigeria
+                MOQ 1/15, <br />
+                NAF BASE, Kaduna, <br />
+                KADUNA 800001, Nigeria
               </p>
             </div>
             <div>
               <p className="text-[11px] font-black uppercase tracking-widest text-gray-900 mb-2">Email:</p>
-              <p className="text-[#C99B3B] font-medium text-sm">info@yoursite.com</p>
+              <p className="text-[#C99B3B] font-medium text-sm">nigeriacorneafoundation@gmail.com</p>
             </div>
             <div>
               <p className="text-[11px] font-black uppercase tracking-widest text-gray-900 mb-2">Phone:</p>
-              <p className="text-[#C99B3B] font-medium text-sm">+ 1235 2355 98</p>
+              <p className="text-[#C99B3B] font-medium text-sm">+ 234 812 953 1011</p>
             </div>
           </div>
 
